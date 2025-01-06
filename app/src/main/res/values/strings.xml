@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Eco_alpha_test</string>
+    <string name="bin_text">BIN</string>
+    <string name="get_info">Получить информацию</string>
+    <string name="country_name">Страна:</string>
+    <string name="cord_name">Координаты:</string>
+    <string name="type_card_name">Тип карты:</string>
+    <string name="bank_text">Данные банка</string>
+    <string name="card_text">Данные карты</string>
+    <string name="url_name">URL:</string>
+    <string name="phone_number">Тел.:</string>
+    <string name="site_name">Сайт:</string>
+    <string name="town_name">Город:</string>
+</resources>

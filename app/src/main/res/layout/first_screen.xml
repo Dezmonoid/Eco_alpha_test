@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et_bin_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/bin_text" />
+
+    <Button
+        android:id="@+id/btn_get_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/get_info" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/card_text" />
+
+    <TextView
+        android:id="@+id/tv_country_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/country_name" />
+
+    <TextView
+        android:id="@+id/tv_cord_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cord_name" />
+
+    <TextView
+        android:id="@+id/tv_type_card_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/type_card_name" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/bank_text" />
+
+    <TextView
+        android:id="@+id/tv_url_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/url_name" />
+
+    <TextView
+        android:id="@+id/tv_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/phone_number" />
+
+    <TextView
+        android:id="@+id/tv_site_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/site_name" />
+
+    <TextView
+        android:id="@+id/tv_town_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/town_name" />
+
+</LinearLayout>
