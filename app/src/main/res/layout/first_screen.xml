@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -9,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/bin_text" />
+        android:hint="@string/bin_text"
+        android:inputType="number"/>
 
     <Button
         android:id="@+id/btn_get_info"
@@ -27,19 +29,19 @@
         android:id="@+id/tv_country_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/country_name" />
+        android:text="@string/country_name_view" />
 
     <TextView
         android:id="@+id/tv_cord_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/cord_name" />
+        android:text="@string/cord_name_view" />
 
     <TextView
         android:id="@+id/tv_type_card_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/type_card_name" />
+        android:text="@string/type_card_name_view" />
 
     <TextView
         android:layout_width="match_parent"
@@ -51,24 +53,29 @@
         android:id="@+id/tv_url_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/url_name" />
+        android:text="@string/url_name_view" />
 
     <TextView
         android:id="@+id/tv_phone_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/phone_number" />
+        android:text="@string/phone_number_view" />
 
     <TextView
         android:id="@+id/tv_site_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/site_name" />
+        android:text="@string/site_name_view" />
 
     <TextView
         android:id="@+id/tv_town_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/town_name" />
+        android:text="@string/town_name_view" />
+    <Button
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/btn_history"
+        android:gravity="bottom"/>
 
 </LinearLayout>

@@ -2,11 +2,14 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.dagger.hilt.android")
+    id("kotlin-kapt")
 }
 
 android {
     namespace = "com.example.eco_alpha_test"
     compileSdk = 35
+
 
     defaultConfig {
         applicationId = "com.example.eco_alpha_test"
@@ -28,19 +31,49 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     buildFeatures {
+        viewBinding = true
         compose = true
     }
 }
 
+
 dependencies {
 
+
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.testing)
+    implementation(libs.androidx.paging.compose)
+    implementation(libs.androidx.room.guava)
+
+
+    implementation(libs.androidx.espresso.core)
+    implementation(libs.google.hilt.android)
+    implementation(libs.play.services.location)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.appcompat)
+    kapt(libs.hilt.compiler)
+    kapt(libs.androidx.room.compiler)
+    kapt(libs.compiler)
+    implementation(libs.okhttp3.okhttp)
+    implementation(libs.logging.interceptor)
+    implementation(libs.retrofit2.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.fragment.ktx)
+
+    implementation(libs.retrofit2.retrofit)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -56,4 +89,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+}
+
+kapt {
+    correctErrorTypes = true
 }
