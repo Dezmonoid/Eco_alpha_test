@@ -6,17 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.eco_alpha_test.R
 import com.example.eco_alpha_test.databinding.FirstScreenBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class FirstScreenFragment : Fragment() {
-
     private var _binding: FirstScreenBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<FirstScreenViewModel>()
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,6 +30,9 @@ class FirstScreenFragment : Fragment() {
         observeLiveData()
         binding.btnGetInfo.setOnClickListener {
             viewModel.getDetail(binding.etBinNumber.text.toString())
+        }
+        binding.btnHistory.setOnClickListener {
+            findNavController().navigate(R.id.to_second_screen)
         }
     }
 

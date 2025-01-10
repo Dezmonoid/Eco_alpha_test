@@ -4,6 +4,7 @@ import com.example.eco_alpha_test.domain.model.BINDetail
 import com.example.eco_alpha_test.presentation.model.BINDetailUI
 
 fun BINDetail.toUI(): BINDetailUI = BINDetailUI(
+    bin = bin,
     latitude = latitude,
     longitude = longitude,
     townName = townName,

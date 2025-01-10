@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("com.google.dagger.hilt.android")
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -17,7 +17,9 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
+        ksp {
+            arg("room.schemaLocation", "$projectDir/schemas")
+        }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -59,9 +61,10 @@ dependencies {
     implementation(libs.play.services.location)
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.appcompat)
-    kapt(libs.hilt.compiler)
-    kapt(libs.androidx.room.compiler)
-    kapt(libs.compiler)
+    implementation(libs.androidx.navigation.ui.ktx)
+    ksp(libs.hilt.compiler)
+    ksp(libs.androidx.room.compiler)
+    ksp(libs.compiler)
     implementation(libs.okhttp3.okhttp)
     implementation(libs.logging.interceptor)
     implementation(libs.retrofit2.retrofit)
@@ -72,6 +75,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
     implementation(libs.retrofit2.retrofit)
     implementation(libs.androidx.core.ktx)
@@ -87,10 +92,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
-}
 
-kapt {
-    correctErrorTypes = true
 }

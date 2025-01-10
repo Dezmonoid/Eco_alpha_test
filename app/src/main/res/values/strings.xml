@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Eco_alpha_test</string>
+    <string name="app_name">Тестовое задание</string>
     <string name="bin_text">BIN</string>
     <string name="get_info">Получить информацию</string>
     <string name="country_name">Страна:  %1$s</string>
@@ -19,4 +19,8 @@
     <string name="site_name_view">Сайт:</string>
     <string name="town_name_view">Город:</string>
     <string name="app_data_base_name">bindetail</string>
+    <string name="bin_name_view">BIN:</string>
+    <string name="bin_name">BIN: %1$s</string>
+    <string name="get_history">Получить историю поиска</string>
+    <string name="back_btn_name">Вернуться на главную</string>
 </resources>

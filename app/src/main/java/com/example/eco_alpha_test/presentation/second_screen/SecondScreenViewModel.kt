@@ -1,4 +1,4 @@
-package com.example.eco_alpha_test.presentation.first_screen
+package com.example.eco_alpha_test.presentation.second_screen
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -15,19 +15,23 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
-class FirstScreenViewModel @Inject constructor(
+class SecondScreenViewModel @Inject constructor(
     private val repository: BINRepository
 ) : ViewModel() {
-    private val _liveData = MutableLiveData<BINDetailUI>()
-    val liveData: LiveData<BINDetailUI>
+    private val _liveData = MutableLiveData<List<BINDetailUI>>()
+    val liveData: LiveData<List<BINDetailUI>>
         get() = _liveData
 
-    fun getDetail(number: String) {
+    init {
+        getDetail()
+    }
+
+    private fun getDetail() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val binDetail = repository.getBINDetail(number)
+                val binDetail = repository.getHistoryBINDetail()
                 withContext(Dispatchers.Main) {
-                    _liveData.value = binDetail.toUI()
+                    _liveData.value = binDetail.map { it.toUI() }
                     //Log.d("Success", liveData.toString())
                 }
             } catch (e: Exception) {

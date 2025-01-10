@@ -1,9 +1,7 @@
 package com.example.eco_alpha_test.di
 
-
 import android.content.Context
 import androidx.room.Room
-import com.example.eco_alpha_test.R
 import com.example.eco_alpha_test.data.AppDatabase
 import com.example.eco_alpha_test.data.BINApi
 import com.example.eco_alpha_test.data.BINRepositoryImpl
@@ -79,6 +77,6 @@ object Module {
     @Singleton
     fun providesAppDatabase(@ApplicationContext context: Context): AppDatabase =
         Room
-            .databaseBuilder(context,AppDatabase::class.java,"bindetail").build()
+            .databaseBuilder(context, AppDatabase::class.java, "bindetail").build()
 }
 

@@ -1,4 +1,4 @@
-package com.example.eco_alpha_test.data.model.DB
+package com.example.eco_alpha_test.data.model.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -6,8 +6,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "bindetail")
 data class BINDetailDB(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int? = null,
+    @PrimaryKey(autoGenerate = false)
+    @ColumnInfo(name = "bin")
+    val bin: String = "",
     @ColumnInfo(name = "lt")
     val latitude: Int?,
     @ColumnInfo(name = "ln")

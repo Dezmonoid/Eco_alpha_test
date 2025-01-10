@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screen_navigation"
+    app:startDestination="@id/firstScreenFragment">
+
+    <fragment
+        android:id="@+id/firstScreenFragment"
+        android:name="com.example.eco_alpha_test.presentation.first_screen.FirstScreenFragment"
+        android:label="FirstScreenFragment"
+        tools:layout="@layout/first_screen">
+        <action
+            android:id="@+id/to_second_screen"
+            app:destination="@id/secondScreenFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondScreenFragment"
+        android:name="com.example.eco_alpha_test.presentation.second_screen.SecondScreenFragment"
+        android:label="SecondScreenFragment"
+        tools:layout="@layout/second_screen">
+        <action
+            android:id="@+id/to_first_screen"
+            app:destination="@id/firstScreenFragment" />
+    </fragment>
+
+</navigation>

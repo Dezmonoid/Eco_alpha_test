@@ -6,7 +6,6 @@ import com.example.eco_alpha_test.domain.model.BINDetail
 
 class BINRepositoryImpl(
     private val appDatabase: AppDatabase,
-
     private val binApi: BINApi,
 ) : BINRepository {
     private val binDao = appDatabase.binDao()
@@ -15,12 +14,13 @@ class BINRepositoryImpl(
             val response = binApi.getCurrentBINData(
                 bin = bin
             )
-            val bindetail = response.toDomain()
-            binDao.insertToDatabase(bindetail.toDB())
-            bindetail
+            val binDetail = response.toDomain(bin)
+            binDao.insert(binDetail.toDB())
+            binDetail
         } catch (e: Exception) {
-            Log.e("", e.message.toString())
+            //Log.e("", e.message.toString())
             BINDetail(
+                bin = bin,
                 latitude = 0,
                 longitude = 0,
                 townName = "",
@@ -31,5 +31,9 @@ class BINRepositoryImpl(
                 url = ""
             )
         }
+    }
+
+    override suspend fun getHistoryBINDetail(): List<BINDetail> {
+        return binDao.getAll().map { it.toDomain() }
     }
 }

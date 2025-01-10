@@ -1,10 +1,11 @@
 package com.example.eco_alpha_test.data
 
-import com.example.eco_alpha_test.data.model.DB.BINDetailDB
-import com.example.eco_alpha_test.data.model.NW.BINDetailNW
+import com.example.eco_alpha_test.data.model.db.BINDetailDB
+import com.example.eco_alpha_test.data.model.nw.BINDetailNW
 import com.example.eco_alpha_test.domain.model.BINDetail
 
-fun BINDetailNW.toDomain(): BINDetail = BINDetail(
+fun BINDetailNW.toDomain(bin: String): BINDetail = BINDetail(
+    bin = bin,
     latitude = country?.latitude.toZeroIfNull(),
     longitude = country?.longitude.toZeroIfNull(),
     townName = country?.name.toString(),
@@ -16,6 +17,7 @@ fun BINDetailNW.toDomain(): BINDetail = BINDetail(
 )
 
 fun BINDetailDB.toDomain(): BINDetail = BINDetail(
+    bin = bin,
     latitude = latitude.toZeroIfNull(),
     longitude = longitude.toZeroIfNull(),
     townName = townName.toString(),
@@ -27,6 +29,7 @@ fun BINDetailDB.toDomain(): BINDetail = BINDetail(
 )
 
 fun BINDetail.toDB(): BINDetailDB = BINDetailDB(
+    bin = bin,
     latitude = latitude,
     longitude = longitude,
     townName = townName,

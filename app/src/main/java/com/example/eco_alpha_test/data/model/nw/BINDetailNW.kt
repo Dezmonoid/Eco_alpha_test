@@ -1,4 +1,4 @@
-package com.example.eco_alpha_test.data.model.NW
+package com.example.eco_alpha_test.data.model.nw
 
 import com.google.gson.annotations.SerializedName
 
