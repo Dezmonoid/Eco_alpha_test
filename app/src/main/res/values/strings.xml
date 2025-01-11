@@ -11,7 +11,7 @@
     <string name="bank_text">Данные банка</string>
     <string name="card_text">Данные карты</string>
     <string name="url_name">URL:  %1$s</string>
-    <string name="phone_number">Тел.:  %1$s</string>
+    <string name="phone_number">Тел.: %1$s</string>
     <string name="site_name">Сайт:  %1$s</string>
     <string name="town_name">Город:  %1$s</string>
     <string name="url_name_view">URL:</string>

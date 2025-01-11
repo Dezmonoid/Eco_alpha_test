@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     android:orientation="vertical">
 
     <EditText
@@ -22,7 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/card_text" />
+        android:text="@string/card_text"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_country_name"
@@ -46,18 +50,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/bank_text" />
+        android:text="@string/bank_text"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_url_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autoLink="web"
         android:text="@string/url_name_view" />
 
     <TextView
         android:id="@+id/tv_phone_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autoLink="phone"
         android:text="@string/phone_number_view" />
 
     <TextView
@@ -76,6 +85,6 @@
         android:id="@+id/btn_history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/get_history"/>
+        android:text="@string/get_history" />
 
 </LinearLayout>

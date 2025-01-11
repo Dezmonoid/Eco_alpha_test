@@ -1,5 +1,7 @@
 package com.example.eco_alpha_test.presentation.first_screen
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.eco_alpha_test.R
 import com.example.eco_alpha_test.databinding.FirstScreenBinding
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class FirstScreenFragment : Fragment() {
@@ -33,6 +36,11 @@ class FirstScreenFragment : Fragment() {
         }
         binding.btnHistory.setOnClickListener {
             findNavController().navigate(R.id.to_second_screen)
+        }
+        binding.tvPhoneNumber.setOnClickListener{
+            val number = binding.tvPhoneNumber.text.toString().removePrefix("Тел.:")
+            val intent = Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", number, null))
+            startActivity(intent)
         }
     }
 
